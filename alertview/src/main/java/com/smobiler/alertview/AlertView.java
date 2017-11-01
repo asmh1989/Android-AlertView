@@ -1,14 +1,16 @@
-package com.bigkoo.alertview;
+package com.smobiler.alertview;
 
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
@@ -155,6 +157,18 @@ public class AlertView {
         }
         if(msg != null) {
             tvAlertMsg.setText(msg);
+//通过行数X行高计算文字段落高度
+            int offset = tvAlertMsg.getLineCount() *tvAlertMsg.getLineHeight();
+            tvAlertMsg.setMovementMethod(ScrollingMovementMethod.getInstance());
+            WindowManager wm = (WindowManager) contextWeak.get()
+                    .getSystemService(Context.WINDOW_SERVICE);
+            int height = wm.getDefaultDisplay().getHeight();
+            tvAlertMsg.setMaxHeight(height * 3 / 5);
+
+            if(offset -tvAlertMsg.getHeight() >0) {
+                tvAlertMsg.scrollTo(0, offset - tvAlertMsg.getHeight());
+            }
+
         }else{
             tvAlertMsg.setVisibility(View.GONE);
         }

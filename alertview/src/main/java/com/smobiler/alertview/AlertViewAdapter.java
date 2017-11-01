@@ -1,4 +1,4 @@
-package com.bigkoo.alertview;
+package com.smobiler.alertview;
 
 import android.content.Context;
 import android.view.LayoutInflater;

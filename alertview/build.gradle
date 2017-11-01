@@ -2,11 +2,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.3"
+version = "1.0.4"
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         minSdkVersion 9
@@ -23,9 +23,9 @@ android {
 }
 
 
-def siteUrl = 'https://github.com/saiwu-bigkoo/Android-AlertView'                        // #CONFIG# // project homepage
-def gitUrl = 'https://github.com/saiwu-bigkoo/Android-AlertView.git'                     // #CONFIG# // project git
-group = "com.bigkoo"
+def siteUrl = 'https://github.com/asmh1989/Android-AlertView'                        // #CONFIG# // project homepage
+def gitUrl = 'https://github.com/asmh1989/Android-AlertView.git'                     // #CONFIG# // project git
+group = "com.smobiler"
 
 install {
     repositories.mavenInstaller {
@@ -44,9 +44,9 @@ install {
                 }
                 developers {
                     developer {
-                        id 'sai'                                           // #CONFIG# // your user id (you can write your nickname)
-                        name 'sai.wu'                                       // #CONFIG# // your user name
-                        email 'sai.wu@bigkoo.com'                               // #CONFIG# // your email
+                        id 'sandy'                                           // #CONFIG# // your user id (you can write your nickname)
+                        name 'sandy.sun'                                       // #CONFIG# // your user name
+                        email 'sandy@smobiler.com'                               // #CONFIG# // your email
                     }
                 }
                 scm {
